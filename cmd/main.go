@@ -1,16 +1,13 @@
 package main
 
 import (
-	"net/http"
-
+	"github.com/0ussamabernou/go-checksite/handler"
 	"github.com/labstack/echo/v4"
 )
 
 func main() {
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
+	e.GET("/", handler.HandleIndex)
 	e.Logger.Fatal(e.Start(":1323"))
 
 }
