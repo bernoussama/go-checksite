@@ -1,5 +1,16 @@
 package index
 
-templ Home(){
-    h1 "Hello World"
+import "github.com/0ussamabernou/go-checksite/view/layout"
+import "github.com/0ussamabernou/go-checksite/view/components"
+
+var props = components.FormProps{InpuType: "text", Url: "/check"}
+
+templ Home() {
+    @layout.Base("home"){
+        <h1>Site Health checker</h1>
+        @components.PostForm(props)
+        <div id="result">
+            
+        </div>
+    }
 }

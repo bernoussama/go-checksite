@@ -8,6 +8,7 @@ import (
 func main() {
 	e := echo.New()
 	e.GET("/", handler.HandleIndex)
+	e.POST("/check", handler.HandleCheck)
 	e.Logger.Fatal(e.Start(":1323"))
 
 }
