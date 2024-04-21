@@ -1,17 +1,41 @@
 package layout
 
 templ Base(title string) {
-<html>
+<html data-theme="light">
 
 <head>
+
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
     <script src="https://unpkg.com/htmx.org@1.9.12"
         integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
         crossorigin="anonymous"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+/>
+<script defer>
+function toggleTheme() {
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-theme');
+
+  if (currentTheme === 'light') {
+    html.setAttribute('data-theme', 'dark');
+  } else {
+    html.setAttribute('data-theme', 'light');
+  }
+}
+</script>
     <title>{ title }</title>
 </head>
 
-<body>
+<body >
+<header>
+<h1>Site Health checker</h1>
+<button onclick="toggleTheme()">Toggle Theme</button>
+</header>
+<div>
     { children... }
+</div>
 </body>
 
 </html>

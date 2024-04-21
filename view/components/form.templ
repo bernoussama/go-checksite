@@ -7,6 +7,7 @@ Url string
 
 templ PostForm(props FormProps) {
 //<form action={ templ.SafeURL(props.Url) } method="post">
+<article>
     <input type={ props.InpuType } 
     name="url" 
     hx-post={ props.Url } 
@@ -14,5 +15,6 @@ templ PostForm(props FormProps) {
     hx-target="#result"
     placeholder="Enter url" 
     required="required" />
+</article>
     //<input type="submit" value="Check" />
 }
